@@ -12,19 +12,20 @@ let outputPath = path.resolve(__dirname, './bin')
         filename: 'index.html',
       }
     , fonts = 'fonts/[name].[ext]'
+    _publicPath = '/';
 
 if (process.env.NODE_ENV === 'production') {
   outputPath = path.resolve(__dirname, './dist/');
+  _publicPath = '/dist/';
   devtool = 'nosources-source-map';
   htmlWebpackOptions.filename = path.resolve(__dirname, './index.html');
-  fonts = 'dist/'+fonts;
 }
 
 options = {
   entry: './src/js/main.js',
   output: {
     path: outputPath,
-    // publicPath: '/',
+    publicPath: _publicPath,
     filename: 'app.bundle.js'
   },
   module: {
