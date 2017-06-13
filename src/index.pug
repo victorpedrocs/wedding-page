@@ -1,0 +1,53 @@
+doctype html
+html(lang='pt-br')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(http-equiv='X-UA-Compatible', content='ie=edge')
+    title= htmlWebpackPlugin.options.title
+  body
+    .container
+      .row.text-center
+        .col-sm
+          p em
+          p.date
+            span 12 
+            span.date-dot  · 
+            span 10 
+            span.date-dot  · 
+            span 2017
+          .names
+            h1.translate-left-70 Liliane
+            h1 &
+            h1.translate-right-70 Victor
+          p irão se casar...
+      .row
+        .col-sm
+          h2 ...no sítio...
+          .row
+            .col-md-normal.col-sm-12.col-sm-last
+              #gmaps
+                iframe#map(width='600', height='400', frameborder='0', style='border:0', src='https://www.google.com/maps/embed/v1/place?q=place_id:ChIJeeC9sG-xmQARjGe0frfJvw4&key=AIzaSyDhwYbMAElESgb4EjKfgy5U6Xc_e1dU0c4', allowfullscreen='')
+            .col-md-normal.col-sm-12.col-sm-first
+              p Nosso Celeiro
+      .row
+        .col-sm
+          h2 ...Com suas madrinhas...
+          ul
+            li Erika
+            li Josiane
+            li Tamires
+            li Ana
+      .row
+        .col-sm
+          h2 ...E padrinhos...
+          ul
+            li Raphael
+            li Anderson
+            li Darlan
+            li Ezequiel
+      .row
+        .col-sm
+          h2 ...e você pode presenteá-los aqui..
+          a.button.large(href="#") Lista de Presentes
+          

@@ -1,0 +1,39 @@
+// --- begin IMPORT FONTS ---
+// @import url('https://fonts.googleapis.com/css?family=Meddon');
+// --- end IMPORT ---
+
+p.date {
+  span {
+    vertical-align: middle;
+  }
+
+  .date-dot {
+    font-size: 2rem;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.names{
+  transform: rotate(-8deg);
+  
+  h1 {
+    font-family: 'WinterCalligraphy', cursive;
+    line-height: 0.9em;
+    font-size: 60pt;
+  }
+  
+  .translate-left-70 {
+    transform: translateX(-50px)
+  }
+
+  .translate-right-70 {
+    transform: translateX(50px)
+  }
+}
+
+.scrolloff {
+  pointer-events: none;
+}
