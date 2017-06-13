@@ -3,12 +3,26 @@ const UglifyJsPlugin = require('webpack/lib/optimize/UglifyJsPlugin');
 const CommonsChunkPlugin = require('webpack/lib/optimize/CommonsChunkPlugin');
 const path = require('path');
 
+let outputPath = path.resolve(__dirname, './bin')
+    , _devtool = '#eval-source-map'
+    , htmlWebpackOptions = {
+        title: 'Liliane e Victor',
+        hash: true,
+        template: './src/index.pug',
+        filename: 'index.html',
+      }
 
-module.exports = {
+if (process.env.NODE_ENV === 'production') {
+  outputPath = path.resolve(__dirname, './dist/');
+  devtool = 'nosources-source-map';
+  htmlWebpackOptions.filename = path.resolve(__dirname, './index.html');
+}
+
+options = {
   entry: './src/js/main.js',
   output: {
-    path: path.resolve(__dirname, './bin'),
-    publicPath: '/',
+    path: outputPath,
+    // publicPath: '/',
     filename: 'app.bundle.js'
   },
   module: {
@@ -17,7 +31,6 @@ module.exports = {
         test: /\.jsx?$/, 
         loader: 'babel-loader', 
         exclude: /nome_modules/,
-        // options: {plugins: ['transform-runtime'], presets: ['es2015'] }
       },
       {
         test: /\.(png|jpg|gif|svg)$/, loader: 'file-loader',
@@ -33,19 +46,11 @@ module.exports = {
       { test: /\.eot$/, loader: 'url-loader?limit=65000&mimetype=application/vnd.ms-fontobject&name=fonts/[name].[ext]' }
     ]
   },
-  // devServer: {
-  //   contentBase: path.resolve(__dirname, './dist'),
-  //   compress: true,
-  //   stats: "errors-only",
-  //   open: true
-  // },
+  stats: {
+    colors: true,
+  },
   plugins: [
-    new HtmlWebpackPlugin({
-      title: 'Liliane e Victor',
-      hash: true,
-      template: './src/index.pug',
-      filename: 'index.html',
-    }),
+    new HtmlWebpackPlugin(htmlWebpackOptions),
     new UglifyJsPlugin({
       beautify: false,
       mangle: { screw_ie8 : true },
@@ -53,8 +58,7 @@ module.exports = {
       comments: false
     })
   ],
-  stats: {
-    colors: true,
-  },
-  devtool: '#eval-source-map',
+  devtool: _devtool
 }
+
+module.exports = options;

@@ -10,7 +10,7 @@
     "dev": "cross-env NODE_ENV=development webpack --color --watch && webpack-dev-server --open --hot --content-base ./dist",
     "deploy": "cross-env NODE_ENV=production webpack --progress --hide-modules",
     "build": "webpack --watch",
-    "start": "yarn run build & yarn run server"
+    "start": "cross-env NODE_ENV=development yarn run build & yarn run server"
   },
   "dependencies": {
     "babel-preset-latest": "^6.24.1",
