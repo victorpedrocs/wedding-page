@@ -5,10 +5,10 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "prebuild": "del-cli dist -f",
+    "prebuild": "del-cli bin -f",
     "server": "http-server ./bin -o",
     "dev": "cross-env NODE_ENV=development webpack --color --watch && webpack-dev-server --open --hot --content-base ./dist",
-    "deploy": "cross-env NODE_ENV=production webpack --progress --hide-modules",
+    "deploy": " del-cli index.html dist -f && cross-env NODE_ENV=production webpack --progress --hide-modules",
     "build": "webpack --watch",
     "start": "cross-env NODE_ENV=development yarn run build & yarn run server"
   },
