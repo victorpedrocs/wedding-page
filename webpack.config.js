@@ -11,9 +11,12 @@ let outputPath = path.resolve(__dirname, './bin')
         template: './src/index.pug',
         filename: 'index.html',
       }
+    , fonts = 'fonts/[name].[ext]'
+    _publicPath = '/';
 
 if (process.env.NODE_ENV === 'production') {
   outputPath = path.resolve(__dirname, './dist/');
+  _publicPath = '/dist/';
   devtool = 'nosources-source-map';
   htmlWebpackOptions.filename = path.resolve(__dirname, './index.html');
 }
@@ -22,7 +25,7 @@ options = {
   entry: './src/js/main.js',
   output: {
     path: outputPath,
-    // publicPath: '/',
+    publicPath: _publicPath,
     filename: 'app.bundle.js'
   },
   module: {
@@ -39,11 +42,11 @@ options = {
       { test: /\.pug$/, loader: 'pug-loader' },
       { test: /\.css$/, loader: 'style-loader!css-loader' },
       { test: /\.(sass|scss)$/, loader: 'style-loader!css-loader!sass-loader' },
-      { test: /\.svg$/, loader: 'url-loader?limit=65000&mimetype=image/svg+xml&name=fonts/[name].[ext]' },
-      { test: /\.woff$/, loader: 'url-loader?limit=65000&mimetype=application/font-woff&name=fonts/[name].[ext]' },
-      { test: /\.woff2$/, loader: 'url-loader?limit=65000&mimetype=application/font-woff2&name=fonts/[name].[ext]' },
-      { test: /\.[ot]tf$/, loader: 'url-loader?limit=65000&mimetype=application/octet-stream&name=fonts/[name].[ext]' },
-      { test: /\.eot$/, loader: 'url-loader?limit=65000&mimetype=application/vnd.ms-fontobject&name=fonts/[name].[ext]' }
+      { test: /\.svg$/, loader: 'url-loader?limit=65000&mimetype=image/svg+xml&name='+fonts },
+      { test: /\.woff$/, loader: 'url-loader?limit=65000&mimetype=application/font-woff&name='+fonts },
+      { test: /\.woff2$/, loader: 'url-loader?limit=65000&mimetype=application/font-woff2&name='+fonts },
+      { test: /\.[ot]tf$/, loader: 'url-loader?limit=65000&mimetype=application/octet-stream&name='+fonts },
+      { test: /\.eot$/, loader: 'url-loader?limit=65000&mimetype=application/vnd.ms-fontobject&name='+fonts }
     ]
   },
   stats: {
