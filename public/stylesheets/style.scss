@@ -1,0 +1,38 @@
+@import '../fonts/stea/font.scss';
+
+html {
+  height: 100vh;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  font-family: 'Helvetica';
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+  
+.jumbo {
+  text-align: center;
+  h1.title {
+    align-self: center;
+    font-family: 'Stea';
+    font-size: 5.5em;
+  }
+
+  p {
+    font-size: 2em;
+    font-weight: lighter;
+  }
+}
+
+a {
+  color: #555;
+  text-decoration: none;
+
+  :hover {
+    color: #333;
+  }
+}
