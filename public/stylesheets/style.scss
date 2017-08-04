@@ -36,3 +36,14 @@ a {
     color: #333;
   }
 }
+
+@media only screen and (max-width: 412px) {
+  .jumbo {
+    h1.title{
+      font-size: 3em;
+    }
+    p {
+      font-size: 1.5em;
+    }
+  }
+}
