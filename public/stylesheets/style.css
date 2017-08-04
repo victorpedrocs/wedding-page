@@ -14,7 +14,8 @@ body {
   font-family: 'Helvetica';
   display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  overflow: hidden; }
 
 .jumbo {
   text-align: center; }
