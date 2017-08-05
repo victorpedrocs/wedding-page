@@ -1,11 +1,11 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+const moment = require('moment');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  let then = new Date(2017,9,12);
-  let now = new Date();
-  days = Math.round(((then-now)/(1000*60*60*24)));
+  let then = moment([2017,9,12]);
+  let days = then.diff(moment(), 'days') +1; // +1 to include the start, this means 'today'
   res.render('index', { title: 'Liliane e Victor', days });
 });
 
