@@ -7,10 +7,12 @@ body {
   align-items: center;
   margin: 0px;
   overflow-x: hidden;
+  max-width: 1024px;
+  margin-right: auto;
+  margin-left: auto;
 }
   
 .jumbo {
-  text-align: center;
   .names{
     transform: rotate(-4deg);
     
@@ -67,11 +69,6 @@ nav.navbar {
   }
 }
 
-section {
-  margin: 20px 0;
-  text-align: center;
-}
-
 .btn {
   cursor: pointer;
   border: 1px solid black;
@@ -82,4 +79,8 @@ section {
 .btn-md {
   font-size: larger;
   padding: 10px 15px;
+}
+
+.text-center {
+  text-align: center;
 }
