@@ -1,5 +1,6 @@
 const gulp    = require('gulp');
 const spawn   = require('child_process').spawn;
+const webpack = require('webpack-stream');
 
 let node;
 
@@ -18,11 +19,17 @@ gulp.task('server', () => {
   });
 });
 
+gulp.task('bundle', () => {
+  return gulp.src('./src/js/entry.js')
+    .pipe(webpack( require('./webpack.config.js')))
+    .pipe(gulp.dest('public/'));
+});
+
 gulp.task('watch', () => {
   gulp.watch(['./app.js', './routes/**/*.js'], ['server']);
-})
+});
 
-gulp.task('dev', ['devenv', 'server', 'watch'])
+gulp.task('dev', ['devenv', 'server','bundle', 'watch']);
 gulp.task('default', ['dev']);
 
 process.on('exit', () => {
