@@ -1,0 +1,38 @@
+extends layout
+
+block content
+  nav.navbar
+    .nav-left
+      a(href="#") LOCAL
+      a(href="#") PADRINHOS
+    .nav-center
+      a(href="#").logo l=v
+    .nav-right
+      a(href="#") LISTA
+      a(href="#") CHÁ
+  .jumbo
+    .names
+      h1.translate-left Liliane
+      h1.translate-right e Victor
+    p vão se casar em #{days} dias...
+
+  section
+    p num lugar cheio de amor cahamado...
+    p.large.text-center 
+      | NOSSO
+      br
+      | CELEIRO
+    a.btn.btn-md como chegar
+  section.row
+    .column
+      p com suas madrinhas...
+    .column
+      p ... e padrinhos
+  section
+    p ... e você pode presenteá-los em...
+    .row
+      .column
+        a.btn.btn-lg.font-condensed ZELO
+      .column
+        a.btn.btn-lg.font-condensed shoptime
+

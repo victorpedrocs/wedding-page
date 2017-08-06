@@ -1,0 +1,85 @@
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: lighter;
+  font-size: large;
+  justify-content: center;
+  align-items: center;
+  margin: 0px;
+  overflow-x: hidden;
+}
+  
+.jumbo {
+  text-align: center;
+  .names{
+    transform: rotate(-4deg);
+    
+    h1 {
+      align-self: center;
+      font-family: 'Stea';
+      font-size: 5em;
+      line-height: 0.6em;
+    }
+
+    .translate-right {
+      transform: translateX(47px)
+    }
+    .translate-left {
+      transform: translateX(-47px)
+    }
+  }
+
+  p {
+    font-size: x-large;
+  }
+}
+
+a {
+  color: #555;
+  text-decoration: none;
+
+  &:hover {
+    color: #111;
+  }
+}
+
+nav.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: 1.25em;
+
+  .logo {
+    font-family: 'Stea';
+    font-size: 2.5em;
+  }
+
+  .nav-left,
+  .nav-right {
+    width: 45%;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .nav-center {
+    width: 10%;
+    display: flex;
+    justify-content: space-evenly;
+  }
+}
+
+section {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.btn {
+  cursor: pointer;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+.btn-md {
+  font-size: larger;
+  padding: 10px 15px;
+}
