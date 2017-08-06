@@ -1,7 +1,3 @@
-import {} from '../fonts/winter/font.scss';
-import {} from 'mini.css/src/flavors/mini-default.scss';
-import {} from '../style/style.scss';
-
-(() => {
-  console.log('hello world');
-})();
+import '../fonts/font.scss';
+import 'mini.css/src/mini/_grid.scss';
+import '../style/style.scss';

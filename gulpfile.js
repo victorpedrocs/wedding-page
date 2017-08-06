@@ -1,6 +1,9 @@
 const gulp    = require('gulp');
+const gutil = require('gulp-util');
 const spawn   = require('child_process').spawn;
-const webpack = require('webpack-stream');
+const webpack = require('webpack');
+const path = require('path');
+const webpackConfig = require('./webpack.config');
 
 let node;
 
@@ -19,14 +22,17 @@ gulp.task('server', () => {
   });
 });
 
-gulp.task('bundle', () => {
-  return gulp.src('./src/js/entry.js')
-    .pipe(webpack( require('./webpack.config.js')))
-    .pipe(gulp.dest('public/'));
+gulp.task('bundle', (done) => {
+  webpack(webpackConfig, (err, stats) => {
+    if(err) throw new gutil.PluginError('webpack', err);
+    gutil.log('[webpack]', stats.toString({colos:true}));
+    done();
+  })
 });
 
 gulp.task('watch', () => {
   gulp.watch(['./app.js', './routes/**/*.js'], ['server']);
+  gulp.watch(['src/js/*.js', 'src/style/**/*.scss', 'src/fonts/**/*.scss'], ['bundle']);
 });
 
 gulp.task('dev', ['devenv', 'server','bundle', 'watch']);

@@ -1,7 +1,6 @@
 const path = require('path');
 
 options = {
-  watch: true,
   entry: './src/js/entry.js',
   output: {
     path: path.resolve(__dirname, 'public'),
@@ -20,10 +19,12 @@ options = {
       { test: /\.css$/, loader: 'style-loader!css-loader' },
       { test: /\.(sass|scss)$/, loader: 'style-loader!css-loader!sass-loader' },
       {
-        test: /\.(ttf|eot|woff|woff2)$/,
-        loader: 'file-loader',
+        test: /\.(woff|woff2)$/,
+        loader: 'url-loader',
         options: {
+          limit: 50000,
           name: './fonts/[name].[ext]',
+          publicPath: '../',
         },
       },
     ],
