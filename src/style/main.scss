@@ -27,7 +27,7 @@ body {
     
     h1 {
       font-family: 'Stea';
-      font-size: 5em;
+      font-size: 3em;
       line-height: 0.6em;
     }
 
@@ -186,5 +186,9 @@ h2.box {
       display: flex;
       justify-content: space-evenly;
     }
+  }
+
+  .jumbo .names h1 {
+    font-size: 5em;
   }
 }
