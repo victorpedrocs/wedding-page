@@ -1,4 +1,4 @@
-@media only screen and (min-width: 721px) and (max-width: 1024px) {
+@media only screen and (min-width: 720px) {
   nav.navbar {
   font-size: 1.25em;
 
@@ -7,9 +7,9 @@
     font-size: 2em;
   }
 
-  .nav-left,
-  .nav-right {
-    display: none;
-  }
+  // .nav-left,
+  // .nav-right {
+  //   display: none;
+  // }
 }
 }

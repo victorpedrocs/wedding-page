@@ -13,11 +13,19 @@ body {
 }
   
 .jumbo {
+  display: flex;
+  align-content: space-around;
+  flex-wrap: wrap;
+  flex: 1 1 auto;
+
+  > * {
+    width: 100%;
+  }
+
   .names{
     transform: rotate(-4deg);
     
     h1 {
-      align-self: center;
       font-family: 'Stea';
       font-size: 5em;
       line-height: 0.6em;
@@ -31,7 +39,7 @@ body {
     }
   }
 
-  p {
+  .subtitle {
     font-size: x-large;
   }
 }
@@ -45,7 +53,8 @@ a {
   }
 }
 
-nav.navbar {
+nav.header {
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -58,9 +67,7 @@ nav.navbar {
 
   .nav-left,
   .nav-right {
-    width: 45%;
-    display: flex;
-    justify-content: space-evenly;
+    display: none;
   }
   .nav-center {
     width: 10%;
@@ -69,11 +76,25 @@ nav.navbar {
   }
 }
 
+.font-condensed {
+  font-family: 'LeagueGothic';
+}
+
 .btn {
+  display: inline-block;
   cursor: pointer;
   border: 1px solid black;
   border-radius: 5px;
   padding: 5px 10px;
+}
+
+div.btn {
+  cursor: pointer;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px 10px;
+  width: fit-content;
+  margin: 0 auto;
 }
 
 .btn-md {
@@ -81,6 +102,89 @@ nav.navbar {
   padding: 10px 15px;
 }
 
+.btn-lg {
+  font-size: xx-large;
+  padding: 15px 20px;
+}
+
+.gifts-buttons{
+  .btn {
+    width: 200px;
+    margin: 10px 10px;
+  }
+}
+
 .text-center {
   text-align: center;
+}
+
+.full-height {
+  height: 100vh;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+section.row {
+  padding: 30px 0;
+}
+
+.localizacao {
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-around;
+  
+  > * {
+    width: 100%;
+  }
+}
+
+h2.box {
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+.date-number {
+  font-size: 2.3em;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.date-month {
+  font-family: "Stea";
+  font-size: 2.5em;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.date {
+  padding: 30px 0;
+}
+
+.no-margin-bottom {
+  margin-bottom: 0;
+}
+
+@media only screen and (min-width: 1024px) {
+  nav.header {
+    .nav-left,
+    .nav-right {
+      width: 45%;
+      display: flex;
+      justify-content: space-evenly;
+    }
+  }
 }

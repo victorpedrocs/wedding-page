@@ -1,11 +1,11 @@
 @media only screen and (max-width: 412px) {
-  .navbar {
+  .nav-left, .nav-right {
     display: none;
   }
   
   .jumbo {
     h1.title{
-      font-size: 2.5em;
+      font-size: 1.5em;
     }
     p {
       font-size: 1.5em;
