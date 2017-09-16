@@ -188,6 +188,22 @@ h2.box {
   margin-bottom: 0;
 }
 
+section#first-section {
+  background-image: url('/images/maos_dadas-sm.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
+  color: white;
+  text-shadow: 1px 1px 8px #555;
+
+  a {
+    color: white;
+  }
+}
+
+// BIG SCREENS ONLY
+
 @media only screen and (min-width: 1024px) {
   nav.header {
     .nav-left,
@@ -201,18 +217,8 @@ h2.box {
   .jumbo .names h1 {
     font-size: 5em;
   }
-}
 
-section#first-section {
-  background-image: url('/images/maos_dadas.jpg');
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-
-  color: white;
-  text-shadow: 1px 1px 8px #555;
-
-  a {
-    color: white;
+  section#first-section {
+    background-image: url('/images/maos_dadas.jpg');
   }
 }
