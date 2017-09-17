@@ -2,13 +2,20 @@ extends layout
 
 block content
   section.flex.flex-column.full-height#first-section
+    //- nav.header
+    //-   .nav-left
+    //-     a(href="#local") LOCAL
+    //-     //- a(href="#padrinhos") PADRINHOS
+    //-   .nav-center
+    //-     a(href="#names").logo l=v
+    //-   .nav-right
+    //-     a(href="#listas") LISTA
     nav.header
-      .nav-left
+      .col-sm.col-sm-hide.text-center
         a(href="#local") LOCAL
-        //- a(href="#padrinhos") PADRINHOS
-      .nav-center
+      .col-sm.text-center
         a(href="#names").logo l=v
-      .nav-right
+      .col-sm.col-sm-hide.text-center
         a(href="#listas") LISTA
     
     .jumbo.text-center
@@ -52,5 +59,5 @@ block content
       p.gifts-buttons
         a(href="http://www2.zelo.com.br/weddinglistProducts.aspx?id=80346&idproduct=&qty=", target="blank").btn.btn-lg.font-condensed ZELO
         a(href="http://www.ricardoeletro.com.br/ListaCasamento/ListaPresentes/106315/Victor-Pedro-e-Liliane/", target="blank").btn.btn-lg.font-condensed Ricardo eletro
-        a(href="https://listadecasamento.shoptime.com.br/pages/BridalRegistryHomePage/bridalRegistryId/01-01-1902459/", target="blank").btn.btn-lg.font-condensed shoptime
+        a(href="https://listadecasamento.shoptime.com.br/pages/BridalRegistryHomePage/bridalRegistryId/01-01-1902459/", target="blank").btn.btn-lg.font-condensed Shoptime
 

@@ -45,6 +45,7 @@ body {
 
 a {
   text-decoration: none;
+  color: inherit;
 
   &:hover {
     text-decoration: underline;
@@ -161,6 +162,8 @@ section.row {
 
 h2.box {
   width: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   margin-left: auto;
   margin-right: auto;
   padding: 10px;
@@ -202,6 +205,10 @@ section#first-section {
   }
 }
 
+.col-sm-hide {
+  display: none;
+}
+
 // BIG SCREENS ONLY
 
 @media only screen and (min-width: 1024px) {
@@ -220,5 +227,9 @@ section#first-section {
 
   section#first-section {
     background-image: url('/images/maos_dadas.jpg');
+  }
+
+  .col-sm-hide {
+    display: block;
   }
 }
