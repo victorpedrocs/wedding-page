@@ -1,3 +1,8 @@
+$bg-img: '/images/20170914_LV_289.jpg';
+$bg-img-sm: '/images/20170914_LV_289.jpg';
+$bg-celeiro: '/images/Celeiro049.jpg';
+$bg-windows: '/images/20170914_LV_241.jpg';
+$bg-kiss: '/images/kiss_on_the_roof.jpg';
 
 body {
   font-family: 'Open Sans', sans-serif;
@@ -43,6 +48,10 @@ body {
   }
 }
 
+.stea-type {
+  font-family: 'Stea';
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -54,6 +63,13 @@ a {
   &:visited {
     color: inherit;
   }
+}
+
+a.disabled {
+  cursor: default;
+  pointer-events: none;
+  opacity: .75;
+
 }
 
 nav.header {
@@ -83,6 +99,18 @@ nav.header {
   font-family: 'LeagueGothic';
 }
 
+.fs-2em {
+  font-size: 2em;
+}
+
+.bg-gray {
+  background-color: #999;
+}
+
+.bg-light-gray {
+  background-color: gray;
+}
+
 .ametype {
   font-family: 'AmericanTypewriter';
 }
@@ -93,6 +121,7 @@ nav.header {
   border: 1px solid black;
   border-radius: 5px;
   padding: 5px 10px;
+  background-color: white;
 
   &:hover {
     text-decoration: none;
@@ -129,6 +158,10 @@ div.btn {
   text-align: center;
 }
 
+.text-right {
+  text-align: right;
+}
+
 .full-height {
   height: 100vh;
 }
@@ -147,6 +180,12 @@ div.btn {
 
 section.row {
   padding: 30px 0;
+}
+
+.vertical-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .localizacao {
@@ -192,7 +231,60 @@ h2.box {
 }
 
 section#first-section {
-  background-image: url('/images/maos_dadas-sm.jpg');
+  background-image: url($bg-img-sm);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
+  color: white;
+  text-shadow: 1px 1px 8px #555;
+
+  a {
+    color: white;
+  }
+}
+
+section#local {
+  background-image: url($bg-celeiro);
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: cover;
+
+  color: white;
+  text-shadow: 1px 1px 8px #555;
+
+  a {
+    color: white;
+  }
+  
+  a.btn {
+    border: 1px solid white;
+    background-color: transparent;
+  }
+}
+
+
+section#data {
+  background-image: url($bg-windows);
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: cover;
+
+  color: white;
+  text-shadow: 1px 1px 8px #555;
+
+  a {
+    color: white;
+  }
+  
+  // a.btn {
+  //   border: 1px solid white;
+  //   background-color: transparent;
+  // }
+}
+
+section#listas {
+  background-image: url($bg-kiss);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -207,6 +299,10 @@ section#first-section {
 
 .col-sm-hide {
   display: none;
+}
+
+footer {
+  background-color: #eee;
 }
 
 // BIG SCREENS ONLY
@@ -226,7 +322,7 @@ section#first-section {
   }
 
   section#first-section {
-    background-image: url('/images/maos_dadas.jpg');
+    background-image: url($bg-img);
   }
 
   .col-sm-hide {

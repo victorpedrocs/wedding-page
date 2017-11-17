@@ -2,62 +2,65 @@ extends layout
 
 block content
   section.flex.flex-column.full-height#first-section
-    //- nav.header
-    //-   .nav-left
-    //-     a(href="#local") LOCAL
-    //-     //- a(href="#padrinhos") PADRINHOS
-    //-   .nav-center
-    //-     a(href="#names").logo l=v
-    //-   .nav-right
-    //-     a(href="#listas") LISTA
     nav.header
-      .col-sm.col-sm-hide.text-center
-        a(href="#local") LOCAL
       .col-sm.text-center
         a(href="#names").logo l=v
-      .col-sm.col-sm-hide.text-center
-        a(href="#listas") LISTA
-    
     .jumbo.text-center
       .names
         h1.translate-left Liliane
         h1.translate-right e Victor 
-      .subtitle.ametype vão se casar em #{days} dias
+      .subtitle.ametype se casaram há #{days}
 
-  section.row.text-center#local
-    .col-md.text-center
-      .localizacao
-        p.no-margin-bottom.ametype num lugar cheio de amor chamado
-        a(href='http://www.nossoceleiro.com/', target='blank')
-          h2.text-center.box
-            | NOSSO
-            br
-            | CELEIRO
-        .como-chegar
-          a(href='https://goo.gl/maps/pRCfKhVCg6z', target='blank').btn.btn-md como chegar
+  section.bg-gray.full-height.row.text-center#local
+    .col-sm.text-center.vertical-center
+      .row
+        .col-sm
+          h3.no-margin-bottom.ametype num lugar cheio de amor chamado
+      .row
+        .col-sm
+          p
+            a(href='http://www.nossoceleiro.com/', target='blank').stea-type.fs-2em NOSSO CELEIRO
+      .row
+        .col-sm
+          .como-chegar
+            a(href='https://goo.gl/maps/pRCfKhVCg6z', target='blank').btn.btn-md como chegar
+    .col-sm.col-sm-hide
 
-    .col-lg.text-center.full-width
+  section.bg-light-gray.full-height.row.text-center#data
+    .col-sm.col-sm-hide
+    .col-sm.text-center.full-width.vertical-center
       .date
-        p.ametype no dia
+        h3.ametype no dia
         p.date-number 12 
         | de
         p.date-month outubro
         | de 
         p.date-number 2017
-
-
-  //- section.row#padrinhos
-  //-   .col-lg
-  //-     p com suas madrinhas...
-  //-   .col-lg
-  //-     p ... e padrinhos
   
-  section.row.text-center#listas
-    .col-sm-12
-      p.ametype e você pode presenteá-los em
-    .col-sm
+  section.bg-gray.full-height.row.text-center#listas
+    .col-sm.vertical-center
+      h3.ametype Você pode presenteá-los em
       p.gifts-buttons
-        a(href="http://www2.zelo.com.br/weddinglistProducts.aspx?id=80346&idproduct=&qty=", target="blank").btn.btn-lg.font-condensed ZELO
-        a(href="http://www.ricardoeletro.com.br/ListaCasamento/ListaPresentes/106315/Victor-Pedro-e-Liliane/", target="blank").btn.btn-lg.font-condensed Ricardo eletro
-        a(href="https://listadecasamento.shoptime.com.br/pages/BridalRegistryHomePage/bridalRegistryId/01-01-1902459/", target="blank").btn.btn-lg.font-condensed Shoptime
+        a(href="http://www2.zelo.com.br/weddinglistProducts.aspx?id=80346&idproduct=&qty=", target="blank").btn.btn-lg.font-condensed.disabled ZELO
+        a(href="http://www.ricardoeletro.com.br/ListaCasamento/ListaPresentes/106315/Victor-Pedro-e-Liliane/", target="blank").btn.btn-lg.font-condensed.disabled Ricardo eletro
+        a(href="https://listadecasamento.shoptime.com.br/pages/BridalRegistryHomePage/bridalRegistryId/01-01-1902459/", target="blank").btn.btn-lg.font-condensed.disabled Shoptime
+  
+  //- presence confirmation
+  //- section.bg-light-gray.full-height.row.text-center#confirmar-presenca
+  //-   .col-sm.vertical-center
+  //-     p.ametype E confirmar sua presença aqui
+  //-     p
+  //-       label.button.btn.btn-md.font-condensed(for='modal-toggle') Confirmar Presença
+
+  //-       input#modal-toggle(type="checkbox")
+  //-       .modal
+  //-         .card
+  //-           label.close(for='modal-toggle')
+  //-           h3.section Confirme sua presença
+  //-           .section
+  //-             form
+  //-               .input-group.fluid
+  //-               label(for='nomes')
+  //-               textarea#names(name="names", cols="10", rows="5")
+  //-   .col-sm.col-sm-hide
 
