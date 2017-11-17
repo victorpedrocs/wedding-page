@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "prestart": "npm deploy",
     "start": "node ./bin/www",
     "webpack": "webpack",
     "deploy": "NODE_ENV=production webpack",
